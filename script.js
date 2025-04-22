@@ -71,15 +71,12 @@ function calculateBMI() {
     }));
     
     // Redirect to results page
-    console.log('Redirecting to results.html');
-    alert('Form submitted successfully. Redirecting to results page...');
     window.location.href = 'results.html';
 }
 
 function displayResults() {
     const userData = JSON.parse(localStorage.getItem('userData'));
     if (!userData) {
-        
         window.location.href = 'bmi-calculator.html';
         return;
     }
@@ -98,11 +95,11 @@ function displayResults() {
     // Display BMI result
     let bmiMessage;
     if (userData.category === 'Underweight') {
-        bmiMessage =` Your BMI suggests you are underweight. Consider increasing your calorie intake with nutrient-dense foods.`;
+        bmiMessage = Your BMI suggests you are underweight. Consider increasing your calorie intake with nutrient-dense foods.;
     } else if (userData.category === 'Normal weight') {
-        bmiMessage =` Congratulations! Your BMI is in the healthy range. Maintain your current habits for continued health.`;
+        bmiMessage = Congratulations! Your BMI is in the healthy range. Maintain your current habits for continued health.;
     } else {
-        bmiMessage =` Your BMI suggests you are overweight. Consider making dietary changes and increasing physical activity.`;
+        bmiMessage = Your BMI suggests you are overweight. Consider making dietary changes and increasing physical activity.;
     }
     
     document.getElementById('bmiResult').innerHTML = `
